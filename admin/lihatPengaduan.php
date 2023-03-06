@@ -284,7 +284,7 @@ td{
             <?php echo $data['isi_laporan'] ?>
           </td>
           <td>
-            <img src="../media/laporan/ echo $data['foto'] ?>" width="100px">
+          <img src="../media/laporan/<?php echo $data['foto']; ?>" width="100px">
           </td>
           <td>
             <?php

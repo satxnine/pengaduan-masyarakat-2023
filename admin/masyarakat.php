@@ -11,6 +11,7 @@ if (isset($_POST['hapus'])) {
     $nik = $_POST['nik'];
     echo($nik);
     $q = mysqli_query($conn, "DELETE FROM `masyarakat` WHERE nik = '$nik'");
+    
 }
 if (isset($_POST['update'])) {
     $nikLama = $_POST['nikLama'];
@@ -108,20 +109,7 @@ input[type=number], input[type=password] {
   border-radius: 8px;
 }
 
-button {
-  background-color: #003ce0;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 65%;
-  border-radius: 8px;
-}
 
-button:hover {
-  opacity: 0.8;
-}
 
 /*div*/
 .sidebar {
@@ -226,6 +214,7 @@ td{
 }
 
   </style>
+  
 </head>
 
 <body>
@@ -251,7 +240,8 @@ td{
                 <th>Nama</th>
                 <th>Username</th>
                 <th>Nomor Telpon</th>
-                <th>Tindakan</th>
+                <th>Status</th>
+                <th>Hapus</th>
             </tr>
         </thead>
         <tbody>
@@ -269,9 +259,8 @@ td{
                                                     } else {
                                                         echo '<form action="" method="post"><input name="nik" type="hidden" value="' . $o->nik . '"><input name="status" type="hidden" value="0"><button name="edit" type="submit" class="btn btn-info"><i class="fa fa-check"></i></button></form>';
                                                     } ?></td>
-                                                <td><button data-bs-toggle="modal" data-bs-target="#modal-xl<?= $o->nik ?>" class="btn btn-success "> <i class="fa fa-pen"></i> </button></td>
                                                 <td>
-                                                    <form action="" method="post"><input type="hidden" name="nik" value="<?= $o->nik ?>"><button name="hapus" class="btn btn-danger"> <i class="fa fa-trash"></i></button></form>
+                                                    <form action="" method="post"><input type="hidden" name="nik" value="<?= $o->nik ?>"><button name="hapus" class="btn btn-danger"> <i class="fa fa-trash"> Hapus </i></button></form>
                                                 </td>
                             
                         </tr>

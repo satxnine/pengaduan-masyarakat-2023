@@ -9,6 +9,8 @@
 		$query = "SELECT * FROM pengaduan WHERE nik = '$varNik';";
 		$result = mysqli_query($conn, $query);
 	}
+
+  
 ?>
 
 <!DOCTYPE html>
